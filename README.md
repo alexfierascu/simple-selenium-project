@@ -1,2 +1,1 @@
-# ioan.fierascu-gmail.com
-simple-selenium-project
+# simple-selenium-project
