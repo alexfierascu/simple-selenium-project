@@ -23,6 +23,7 @@ public class SimpleTests {
         //1. deschidem browser
         WebDriver driver = new FirefoxDriver(); // deschide o instanta de firefox
 
+
         //2. navigam catre www.facebook.com
         driver.get("https://www.facebook.com/"); // browserul ma va directa catre facebook.com
         //driver.navigate().to("https://www.facebook.com/"); // browserul ma va directa catre facebook.co
