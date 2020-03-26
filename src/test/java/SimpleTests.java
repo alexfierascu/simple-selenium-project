@@ -106,6 +106,7 @@ public class SimpleTests {
         inputPassword.sendKeys("cea mai smechera parola din lume");
 
 
+
     }
 
 
