@@ -72,13 +72,14 @@ public class SimpleTests {
 
         Assert.assertTrue(logoFacebook.isDisplayed());
 
+
         //4. inchidem sesiune browser
         driver.quit();
     }
 
 
     @Test
-    public void inputUserAndPassword() {
+    public void loginToFacebookWithValidUserAndInvalidPassword() {
         //0. setare preconditii test
         //1. deschidem browser
         //2. navigam catre www.facebook.com
@@ -99,11 +100,27 @@ public class SimpleTests {
         driver.navigate().to("https://www.facebook.com/"); // browserul ma va directa catre facebook.co
 
 
-        WebElement inputPassword = driver.findElement(By.id("pass"));
         WebElement inputEmail = driver.findElement(By.id("email"));
+        WebElement inputPassword = driver.findElement(By.id("pass"));
+        WebElement facebookLoginButton = driver.findElement(By.id("u_0_b"));
 
+
+        //introdus user is parola in facebook login page
         inputEmail.sendKeys("fier4jat@yahoo.com");
         inputPassword.sendKeys("cea mai smechera parola din lume");
+        //am facut click pe butonul de facebook login
+        facebookLoginButton.click();
+
+        //verific ca am fost redirectat pe alta pagina (pagina de login error)
+        //verific ca sunt pe pagina de login error
+        Assert.assertEquals(driver.getTitle(), "Log into Facebook | Facebook");
+        //imi iau WebElementul prin care userul este atentionat ca parola este gresita
+        WebElement xPathMesajEroareLogin = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[3]/div/div/div"));
+        //verific ca WebElementul prin care userul este atentionat ca parola este gresita este afisat
+        Assert.assertTrue(xPathMesajEroareLogin.isDisplayed());
+
+        //inchidem sesiunea de browser
+        driver.quit();
 
 
     }
