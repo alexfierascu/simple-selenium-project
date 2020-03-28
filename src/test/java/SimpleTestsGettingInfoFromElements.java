@@ -17,7 +17,7 @@ public class SimpleTestsGettingInfoFromElements extends BaseClass {
         //extrag textul labelulului
         String emailOrPhoneLabelText = emailOrPhoneLabel.getText();
 
-        //al afisez-optional
+        //il afisez - este optional
         System.out.println("textul este " + emailOrPhoneLabelText);
 
         //imi construiesc un string cu textul pe care ma astept sa il obtin
@@ -69,9 +69,6 @@ public class SimpleTestsGettingInfoFromElements extends BaseClass {
 
         //acum vreau sa verific ca input fieldul respectiv este enabled
         Assert.assertTrue(nameTextInput.isEnabled());
-
-        //fac asertiunea de egalitate intre cele 2 stringuri
-
     }
 
     @Test
