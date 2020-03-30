@@ -34,15 +34,21 @@ public class FacebookSignUp {
 
         driver.findElement(By.id("u_0_7")).click(); // gender select
 
-        //driver.findElement(By.id("u_0_15")).submit(); //submit button
-        driver.findElement(By.name("websubmit")).click();
-        //driver.findElement(By.className("inputtext _8n1_")).sendKeys("stop");//code doesn t work
+        driver.findElement(By.id("u_0_15")).click(); //submit button
+        //driver.findElement(By.name("websubmit")).click();
+        //TODO 1
+        /*
+        * 1. use a wait in selenium (implicit/ explicit)
+        * 2. verify that you are on verification page
+        * 3. input text into input text area field
+        * */
+        //driver.findElement(By.id("code_in_cliff")).sendKeys("stop");//code doesn t work
 
-        driver.quit();
+        //TODO 2
+        // a test without at least an assertion is not a test!!!
 
 
-
-
+        //driver.quit();
     }
 
 
