@@ -33,6 +33,10 @@
             <version>${selenium.version}</version>
         </dependency>
 
+       <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+       </dependency>
 
         <!--putem folosi junit, dar e greoi-->
 
