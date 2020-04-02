@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseClass {
 
-    private static WebDriver driver;
+    public static WebDriver driver;
 
     @BeforeClass
     public static void driverSetup() {
