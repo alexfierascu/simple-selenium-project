@@ -21,7 +21,7 @@ public class WorkingWithAlertsSelenium extends BaseClass {
         //inchid alerta (apas OK)
         simpleAlert.accept();
 
-        Util.isAlertPresent(simpleAlert);
+       Assert.assertFalse(Util.isAlertPresent(simpleAlert));
 
         //todo
         //test de verificat ca s-a inchis alerta
