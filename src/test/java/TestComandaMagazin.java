@@ -60,12 +60,16 @@ public class TestComandaMagazin extends BaseClass {
         WebElement titluProdus = getDriver().findElement(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"));
         String numeProdusDinPagina = titluProdus.getText();
         Assert.assertEquals(numeProdus, numeProdusDinPagina);
-        Select marimePantofi = (Select) getDriver().findElement(By.id("buy_7773114_27884"));
+        Select marimePantofi = new Select(getDriver().findElement(By.id("buy_7773114_27884")));
+        marimePantofi.selectByIndex(2);
+        WebElement buttonAdaugaProdusInCos = getDriver().findElement(xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[8]/span[1]/button"));
+        buttonAdaugaProdusInCos.click();
+        //todo -ana de continuat
+
 //        WebElement marimePantofi= getDriver().findElement(xpath("//*[@id=\"buy_7802690_27884\"]"));
 //        marimePantofi.findElements(xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[5]/select/option[3]"));
 //        marimePantofi.click();
-//        WebElement buttonAdaugaProdusInCos=getDriver().findElement(xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[8]/span[1]/button"));
-//        buttonAdaugaProdusInCos.click();
+//        ;
 //        WebElement buttonProduseInCos=getDriver().findElement(xpath("/html/body/header/div[1]/div[1]/div/div[3]/a/span/img"));
 
     }
