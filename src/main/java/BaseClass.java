@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseClass {
 
-    public static WebDriver driver;
+    private static WebDriver driver;
 
     @BeforeClass
     public static void driverSetup() {
@@ -14,10 +14,10 @@ public class BaseClass {
         driver.manage().window().maximize();
     }
 
-    @AfterClass
-    public void driverTeardown() {
-        driver.quit();
-    }
+//    @AfterClass
+//    public void driverTeardown() {
+//        driver.quit();
+//    }
 
 
     public static WebDriver getDriver() {
