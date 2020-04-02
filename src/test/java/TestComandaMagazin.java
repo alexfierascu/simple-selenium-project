@@ -12,7 +12,6 @@ import static org.openqa.selenium.By.xpath;
 
 public class TestComandaMagazin extends BaseClass {
 
-
     @Test
     public void testAccesareSite() {
         getDriver().navigate().to("https://www.depurtat.ro/");
@@ -34,34 +33,46 @@ public class TestComandaMagazin extends BaseClass {
         depurtatLoginButton.click();
         WebElement autentification = getDriver().findElement(By.id("message_profile_password"));
         Assert.assertTrue(autentification.isDisplayed());
+
     }
 
     @Test
-    public void testAdaugareProduseInCos() throws InterruptedException {
+    public void testAdaugareProduseInCos() {
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+
         getDriver().navigate().to("https://www.depurtat.ro/");
         WebElement acceptCookiesButton = getDriver().findElement(By.xpath("/html/body/div[1]/div/div[2]/a"));
         acceptCookiesButton.click();
         WebElement butonPromotii = getDriver().findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/nav/ul/li[2]/a"));
         butonPromotii.click();
         Assert.assertEquals(getDriver().getTitle(), "Promotii - dEpurtat");
+
+
         Actions action = new Actions(getDriver());
         WebElement primulProdusVeziDetaliiButton = getDriver().findElement(By.xpath("//*[@id=\"page_content\"]/div[5]/div/div[1]/div/div[2]/div[3]/a[1]"));
-        WebElement titluArticolPrimulProdus = getDriver().findElement(By.xpath("/html/body/main/div/div/div/div[5]/div/div[1]/div/div[2]/a"));
-        String numeProdus = titluArticolPrimulProdus.getText();
-        System.out.println("numele produsului este " + numeProdus);
         action.moveToElement(primulProdusVeziDetaliiButton).click().build().perform();
 
         //explicit wait
         //Thread.sleep(3000);
+        WebElement titluArticolPrimulProdus = getDriver().findElement(By.xpath("/html/body/main/div/div/div/div[5]/div/div[1]/div/div[2]/a"));
+        String numeProdus = titluArticolPrimulProdus.getText();
+        System.out.println("numele produsului este " + numeProdus);
 
         //implicit wait
-        wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"), numeProdus));
+        // wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"), numeProdus));
+        //un alt wait dupa un element din pagina
+        wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/div[1]/span"), "Cod: 7773114"));
+
         WebElement titluProdus = getDriver().findElement(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"));
         String numeProdusDinPagina = titluProdus.getText();
+
+
         Assert.assertEquals(numeProdus, numeProdusDinPagina);
+
+
         Select marimePantofi = new Select(getDriver().findElement(By.id("buy_7773114_27884")));
         marimePantofi.selectByIndex(2);
+
         WebElement buttonAdaugaProdusInCos = getDriver().findElement(xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[8]/span[1]/button"));
         buttonAdaugaProdusInCos.click();
         //todo -ana de continuat
