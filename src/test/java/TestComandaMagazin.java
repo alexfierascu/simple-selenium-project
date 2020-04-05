@@ -73,9 +73,9 @@ public class TestComandaMagazin extends BaseClass {
 
         marimePantofi.selectByIndex(2);
 
-        WebElement buttonAdaugaProdusInCos = getDriver().findElement(xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[9]/span[1]/button"));
+        WebElement butonAdaugaProdusInCos = getDriver().findElement(xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[9]/span[1]/button"));
 
-        buttonAdaugaProdusInCos.click();
+        butonAdaugaProdusInCos.click();
         //todo -ana de continuat
 
 //        WebElement marimePantofi= getDriver().findElement(xpath("//*[@id=\"buy_7802690_27884\"]"));
