@@ -9,15 +9,15 @@ public class BaseClass {
 
     @BeforeClass
     public static void driverSetup() {
-        System.setProperty("webdriver.gecko.driver", "./src/main/resources/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "./src/main/resources/mac/geckodriver");
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
     }
 
-    @AfterClass
-    public void driverTeardown() {
-        driver.quit();
-    }
+//    @AfterClass
+//    public void driverTeardown() {
+//        driver.quit();
+//    }
 
 
     public static WebDriver getDriver() {
