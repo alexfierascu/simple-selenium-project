@@ -26,7 +26,7 @@ public class SimpleTestsNavigationAndElementVerification {
 
         //2. navigam catre www.facebook.com
         driver.get("https://www.facebook.com/"); // browserul ma va directa catre facebook.com
-        //driver.navigate().to("https://www.facebook.com/"); // browserul ma va directa catre facebook.co
+        //driver.navigate().to("https://www.facebook.com/"); // browserul ma va directa catre facebook.com
 
         //3. verificam ca suntem pe www.facebook.com
         //3.2. verificare titlu pagina "Facebook - Log In or Sign Up"
@@ -126,6 +126,12 @@ public class SimpleTestsNavigationAndElementVerification {
 
 
     }
+
+
+
+
+
+
 
 
 }
