@@ -59,9 +59,8 @@ public class TestComandaMagazin extends BaseClass {
         System.out.println("numele produsului este " + numeProdus);
 
         //implicit wait
-        // wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"), numeProdus));
-        //un alt wait dupa un element din pagina
-        wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/div[1]/span"), "Cod: 7773114"));
+        wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"), numeProdus));
+
 
         WebElement titluProdus = getDriver().findElement(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"));
         String numeProdusDinPagina = titluProdus.getText();
@@ -70,10 +69,12 @@ public class TestComandaMagazin extends BaseClass {
         Assert.assertEquals(numeProdus, numeProdusDinPagina);
 
 
-        Select marimePantofi = new Select(getDriver().findElement(By.id("buy_7773114_27884")));
+        Select marimePantofi = new Select(getDriver().findElement(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[6]/select")));
+
         marimePantofi.selectByIndex(2);
 
-        WebElement buttonAdaugaProdusInCos = getDriver().findElement(xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[8]/span[1]/button"));
+        WebElement buttonAdaugaProdusInCos = getDriver().findElement(xpath("/html/body/main/div/div/div/div[3]/div[2]/form/div[9]/span[1]/button"));
+
         buttonAdaugaProdusInCos.click();
         //todo -ana de continuat
 
