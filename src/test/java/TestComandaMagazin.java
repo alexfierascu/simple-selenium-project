@@ -61,7 +61,7 @@ public class TestComandaMagazin extends BaseClass {
         //implicit wait
         // wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"), numeProdus));
         //un alt wait dupa un element din pagina
-        wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/div[1]/span"), "Cod: 7773114"));
+        wait.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"page_content\"]/div[3]/div[2]/div[1]/span"), "Cod: 7766029"));
 
         WebElement titluProdus = getDriver().findElement(By.xpath("/html/body/main/div/div/div/div[3]/div[2]/h1"));
         String numeProdusDinPagina = titluProdus.getText();
